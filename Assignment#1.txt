@@ -1,0 +1,63 @@
+--1. 
+select ProductID, Name, Color, ListPrice
+from production.Product
+--2.
+select ProductID, Name, Color, ListPrice
+from production.Product
+where ListPrice!=0
+--3.
+select ProductID, Name, Color, ListPrice
+from Production.Product
+where Color is NULL
+--4.
+select ProductID, Name, Color, ListPrice
+from Production.Product
+where Color is not null
+--5.
+select ProductID, Name, Color, ListPrice
+from Production.Product
+where Color is not null and ListPrice > 0
+--6.
+select concat(Name, ' ',Color)
+from Production.Product
+where color is not null
+--7.
+select concat('NAME: ',Name, ' -- ','COLOR: ', Color)
+from production.Product
+where Color = 'black' or Color='silver'
+--8.
+select ProductID, Name
+from Production.Product
+where ProductID between 400 and 500
+--9.
+select ProductID, Name, Color
+from Production.Product
+where Color ='black' or Color='blue'
+--10.
+select *
+from production.Product
+where name like 'S%'
+--11.
+select Name, ListPrice
+from Production.Product
+where Name like 'S%' 
+order by Name Asc
+--12.
+select Name, ListPrice
+from Production.Product
+where Name like 's%' or name like 'a%'
+order by Name Asc
+--13.
+select Name
+from Production.Product
+where name like 'SPO%' and name not like 'SPOK%'
+order by Name asc
+--14.
+select distinct Color
+from production.Product
+where color is not null
+order by Color desc
+--15.
+select distinct ProductSubcategoryID, Color
+from production.Product
+where ProductSubcategoryID is not null and color is not null
